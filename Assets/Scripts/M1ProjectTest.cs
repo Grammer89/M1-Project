@@ -6,23 +6,23 @@ using UnityEngine;
 
 public class M1ProjectTest : MonoBehaviour
 {
-    public Hero Squall;
-    public Hero Seifer;
+    [SerializeField] private Hero Squall;
+    [SerializeField] private Hero Seifer;
     // Start is called before the first frame update
     void Start()
     {
-        //Create First Hero
-        Stats bonusStatsSquall = new Stats(50, 0, 0, 25, 0, 0, 0);
-        Stats baseStatsSquall = new Stats(50, 25, 30, 25, 0, 0, 0);
-        Weapon weaponSquall = new Weapon("Leonheart", Weapon.DAMAGE_TYPE.PHYSICAL, Stats.ELEMENT.FIRE, bonusStatsSquall);
-        Squall = new("Squall", 720, baseStatsSquall, Stats.ELEMENT.FIRE, Stats.ELEMENT.LIGHTING, weaponSquall);
-        Debug.Log("HP inizial Squall: " + Squall.GetHp());
-        //Create Second Hero
-        Stats bonusStatsSeifer = new Stats(35, 0, 15, 0, 0, 15, 50);
-        Stats baseStatsSeifer = new Stats(45, 15, 40, 35, 20, 15, 15);
-        Weapon weaponSeifer = new Weapon("Shimatsuken", Weapon.DAMAGE_TYPE.MAGICAL, Stats.ELEMENT.LIGHTING, bonusStatsSeifer);
-        Seifer = new("Seifer", 850, baseStatsSeifer, Stats.ELEMENT.LIGHTING, Stats.ELEMENT.FIRE, weaponSeifer);
-        Debug.Log("HP iniziali Seifer: " + Seifer.GetHp());
+        //////    //Create First Hero
+        //////    Stats bonusStatsSquall = new Stats(50, 0, 0, 25, 0, 0, 0);
+        //////    Stats baseStatsSquall = new Stats(50, 25, 30, 25, 0, 0, 0);
+        //////    Weapon weaponSquall = new Weapon("Leonheart", Weapon.DAMAGE_TYPE.PHYSICAL, Stats.ELEMENT.FIRE, bonusStatsSquall);
+        //////    Squall = new("Squall", 720, baseStatsSquall, Stats.ELEMENT.FIRE, Stats.ELEMENT.LIGHTING, weaponSquall);
+        //////    Debug.Log("HP inizial Squall: " + Squall.GetHp());
+        //////    //Create Second Hero
+        //////    Stats bonusStatsSeifer = new Stats(35, 0, 15, 0, 0, 15, 50);
+        //////    Stats baseStatsSeifer = new Stats(45, 15, 40, 35, 20, 15, 15);
+        //////    Weapon weaponSeifer = new Weapon("Shimatsuken", Weapon.DAMAGE_TYPE.MAGICAL, Stats.ELEMENT.LIGHTING, bonusStatsSeifer);
+        //////    Seifer = new("Seifer", 850, baseStatsSeifer, Stats.ELEMENT.LIGHTING, Stats.ELEMENT.FIRE, weaponSeifer);
+        //////    Debug.Log("HP iniziali Seifer: " + Seifer.GetHp());
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class M1ProjectTest : MonoBehaviour
                        Weapon weaponHeroA)
     {
         //Check if the defenser is defeated
-        if ( (heroB.IsAlive() == false) || (heroA.IsAlive() == false) )
+        if ((heroB.IsAlive() == false) || (heroA.IsAlive() == false))
         { return; }
 
         Debug.Log(heroA.GetName() + " attacca " + heroB.GetName());

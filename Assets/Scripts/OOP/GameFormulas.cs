@@ -1,7 +1,9 @@
 
 using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
+using System;
 
+[Serializable]
 public static class GameFormulas
 {
     public static bool HasElementAdvantage(Stats.ELEMENT attackElement, Hero defender)
@@ -27,7 +29,7 @@ public static class GameFormulas
     public static bool HasHit(Stats attacker, Stats defender)
     {
         int HitChance = attacker.aim - defender.eva;
-        int randomNumber = Random.Range(0, 100);
+        int randomNumber = UnityEngine.Random.Range(0, 100);
         if (randomNumber > HitChance)
         {
             Debug.Log("MISS");
@@ -37,7 +39,7 @@ public static class GameFormulas
     }
     public static bool IsCrit(int critValue)
     {
-        int randomNumber = Random.Range(0, 100);
+        int randomNumber = UnityEngine.Random.Range(0, 100);
         if (randomNumber < critValue)
         {
             Debug.Log("CRIT");

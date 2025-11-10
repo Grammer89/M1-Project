@@ -7,6 +7,7 @@ using UnityEngine;
 public struct Stats
 {
 
+    [SerializeField]
     public enum ELEMENT
     {
         NONE = 0,
@@ -15,25 +16,25 @@ public struct Stats
         LIGHTING = 3,
     }
 
-    public int atk;
-    public int def;
-    public int res;
-    public int spd;
-    public int crt;
-    public int aim;
-    public int eva;
+    [SerializeField] public int atk;
+    [SerializeField] public int def;
+    [SerializeField] public int res;
+    [SerializeField] public int spd;
+    [SerializeField] public int crt;
+    [SerializeField] public int aim;
+    [SerializeField] public int eva;
 
 
     //Construct
-    public Stats(int atk, int def , int res, int spd, int crt,int aim, int eva)
+    public Stats(int atk, int def, int res, int spd, int crt, int aim, int eva)
     {
-       this.atk = atk;
-       this.def = def;
-       this.res = res;
-       this.spd = spd;
-       this.crt = crt;
-       this.aim = aim;
-       this.eva = eva;
+        this.atk = atk;
+        this.def = def;
+        this.res = res;
+        this.spd = spd;
+        this.crt = crt;
+        this.aim = aim;
+        this.eva = eva;
     }
 
     //Functionality

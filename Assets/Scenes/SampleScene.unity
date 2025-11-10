@@ -458,6 +458,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab11f1aa83f3f18468cbbec839ace123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Squall:
+    name: Marco
+    hp: 850
+    baseStats:
+      atk: 100
+      def: 0
+      res: 0
+      spd: 20
+      crt: 0
+      aim: 0
+      eva: 0
+    resistance: 1
+    weakness: 0
+    weapon:
+      name: Spada Luminosa
+      dmgType: 20
+      elem: 1
+      bonusStats:
+        atk: 50
+        def: 0
+        res: 0
+        spd: 0
+        crt: 0
+        aim: 0
+        eva: 0
+  Seifer:
+    name: Roberto
+    hp: 1000
+    baseStats:
+      atk: 25
+      def: 50
+      res: 100
+      spd: 0
+      crt: 0
+      aim: -10
+      eva: 0
+    resistance: 2
+    weakness: 1
+    weapon:
+      name: Arpa
+      dmgType: 21
+      elem: 1
+      bonusStats:
+        atk: 50
+        def: 0
+        res: 0
+        spd: 0
+        crt: 0
+        aim: 0
+        eva: 0
 --- !u!65 &1307504149
 BoxCollider:
   m_ObjectHideFlags: 0

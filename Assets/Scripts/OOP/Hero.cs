@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
@@ -6,12 +7,12 @@ using UnityEngine;
 public class Hero
 {
     ////Declaration Variable
-    private string name;
-    private int hp;
-    private Stats baseStats;
-    private Stats.ELEMENT resistance;
-    private Stats.ELEMENT weakness;
-    private Weapon weapon;
+    [SerializeField] private string name;
+    [SerializeField] private int hp;
+    [SerializeField] private Stats baseStats;
+    [SerializeField] private Stats.ELEMENT resistance;
+    [SerializeField] private Stats.ELEMENT weakness;
+    [SerializeField] private Weapon weapon;
     //Constructor
 
     public Hero(string name, int hp, Stats baseStats, Stats.ELEMENT resistance,
@@ -42,6 +43,8 @@ public class Hero
     {
         if (!string.IsNullOrEmpty(name))
         { this.name = name; }
+        else
+        { this.name = "Hero"; }
     }
     public void SetHp(int amount)
     {
@@ -61,11 +64,18 @@ public class Hero
     public void SetWeakness(Stats.ELEMENT weakness)
     { this.weakness = weakness; }
     public void SetWeapon(Weapon weapon)
-    { this.weapon = weapon; }
+    {
+        if (weapon != null)
+        { this.weapon = weapon; }
+        else
+        { this.weapon.SetName("Two Hands"); }
+    }
 
     //Functionality
     void AddHp(int amount)
-    { SetHp(amount); }
+    {
+        SetHp(amount);
+    }
 
     public void TakeDamage(int damage)
     {

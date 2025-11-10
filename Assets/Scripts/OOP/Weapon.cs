@@ -5,21 +5,20 @@ using Unity.VisualScripting;
 using UnityEngine.Rendering.UI;
 
 [Serializable]
-
-
 public class Weapon
 {
     //Declaration Enum
+    [SerializeField]
     public enum DAMAGE_TYPE
     {
         PHYSICAL = 20,
         MAGICAL = 21,
     }
     //Declaration Variable
-    private string name;
-    private DAMAGE_TYPE dmgType;
-    private Stats.ELEMENT elem;
-    private Stats bonusStats;
+    [SerializeField] private string name;
+    [SerializeField] private DAMAGE_TYPE dmgType;
+    [SerializeField] private Stats.ELEMENT elem;
+    [SerializeField] private Stats bonusStats;
     //Constructor
     public Weapon(string name, DAMAGE_TYPE dmgType, Stats.ELEMENT elem, Stats bonusStats)
     {
