@@ -29,12 +29,9 @@ public class M1ProjectTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (check == false)
-        {
-            return;
-        }
-
-        if ((Squall.IsAlive() == false) || (Seifer.IsAlive() == false))
+        if ((Squall.IsAlive() == false) ||
+            (Seifer.IsAlive() == false) ||
+            (check == false))
         {
             return;
         }
@@ -80,7 +77,7 @@ public class M1ProjectTest : MonoBehaviour
         if (advantage == true)
         { Debug.Log("WEAKNESS"); }
         bool disvantage = GameFormulas.HasElementDisdvantage(weaponHeroA.GetElem(), heroB);
-        if (advantage == true)
+        if (disvantage == true)
         { Debug.Log("RESIST"); }
 
         //Calculate Damage
