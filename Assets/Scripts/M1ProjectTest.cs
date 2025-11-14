@@ -8,26 +8,32 @@ public class M1ProjectTest : MonoBehaviour
 {
     [SerializeField] private Hero Squall;
     [SerializeField] private Hero Seifer;
+    private bool check;
     // Start is called before the first frame update
     void Start()
     {
-        //////    //Create First Hero
-        //////    Stats bonusStatsSquall = new Stats(50, 0, 0, 25, 0, 0, 0);
-        //////    Stats baseStatsSquall = new Stats(50, 25, 30, 25, 0, 0, 0);
-        //////    Weapon weaponSquall = new Weapon("Leonheart", Weapon.DAMAGE_TYPE.PHYSICAL, Stats.ELEMENT.FIRE, bonusStatsSquall);
-        //////    Squall = new("Squall", 720, baseStatsSquall, Stats.ELEMENT.FIRE, Stats.ELEMENT.LIGHTING, weaponSquall);
-        //////    Debug.Log("HP inizial Squall: " + Squall.GetHp());
-        //////    //Create Second Hero
-        //////    Stats bonusStatsSeifer = new Stats(35, 0, 15, 0, 0, 15, 50);
-        //////    Stats baseStatsSeifer = new Stats(45, 15, 40, 35, 20, 15, 15);
-        //////    Weapon weaponSeifer = new Weapon("Shimatsuken", Weapon.DAMAGE_TYPE.MAGICAL, Stats.ELEMENT.LIGHTING, bonusStatsSeifer);
-        //////    Seifer = new("Seifer", 850, baseStatsSeifer, Stats.ELEMENT.LIGHTING, Stats.ELEMENT.FIRE, weaponSeifer);
-        //////    Debug.Log("HP iniziali Seifer: " + Seifer.GetHp());
+
+        check = Squall.CheckBeforeStart(Squall);
+        if (check == false)
+        {
+            return;
+        }
+        check = Seifer.CheckBeforeStart(Seifer);
+        if (check == false)
+        {
+            return;
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (check == false)
+        {
+            return;
+        }
+
         if ((Squall.IsAlive() == false) || (Seifer.IsAlive() == false))
         {
             return;
@@ -74,6 +80,7 @@ public class M1ProjectTest : MonoBehaviour
         if (advantage == true)
         { Debug.Log("WEAKNESS"); }
         bool disvantage = GameFormulas.HasElementDisdvantage(weaponHeroA.GetElem(), heroB);
+        if (advantage == true)
         { Debug.Log("RESIST"); }
 
         //Calculate Damage

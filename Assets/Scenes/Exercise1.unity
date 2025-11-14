@@ -462,14 +462,14 @@ MonoBehaviour:
     name: Marco
     hp: 850
     baseStats:
-      atk: 100
+      atk: 50
       def: 0
       res: 0
       spd: 20
       crt: 0
       aim: 0
       eva: 0
-    resistance: 1
+    resistance: 0
     weakness: 0
     weapon:
       name: Spada Luminosa
@@ -495,7 +495,7 @@ MonoBehaviour:
       aim: -10
       eva: 0
     resistance: 2
-    weakness: 1
+    weakness: 0
     weapon:
       name: Arpa
       dmgType: 21

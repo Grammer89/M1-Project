@@ -8,13 +8,13 @@ public static class GameFormulas
 {
     public static bool HasElementAdvantage(Stats.ELEMENT attackElement, Hero defender)
     {
-        if (attackElement == defender.GetWeakness())
+        if (attackElement == defender.GetWeakness() && defender.GetWeakness() != Stats.ELEMENT.NONE)
         { return true; }
         else { return false; }
     }
     public static bool HasElementDisdvantage(Stats.ELEMENT attackElement, Hero defender)
     {
-        if (attackElement == defender.GetResistance())
+        if (attackElement == defender.GetResistance() && defender.GetWeakness() != Stats.ELEMENT.NONE)
         { return true; }
         else { return false; }
     }
@@ -45,7 +45,7 @@ public static class GameFormulas
             Debug.Log("CRIT");
             return true;
         }
-        else { return true; }
+        else { return false; }
     }
 
     public static int CalculateDamage(Hero attacker, Hero defender)

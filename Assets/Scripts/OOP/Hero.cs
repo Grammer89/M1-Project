@@ -93,4 +93,25 @@ public class Hero
         else
         { return false; }
     }
+
+    public bool CheckBeforeStart(Hero hero)
+    {
+        // Check among weakness - resistance - weapon.elem for each hero
+        if (hero.GetWeakness() != Stats.ELEMENT.NONE)
+        {
+            if (hero.GetWeakness() == hero.GetResistance())
+            {
+                Debug.LogError("L'eroe " + hero.GetName() + " non può avere sia resistenza che debolezza uguali");
+                return false;
+            }
+            Weapon weapon = hero.GetWeapon();
+            if (hero.GetWeakness() == weapon.GetElem())
+            {
+                Debug.LogError("L'eroe " + hero.GetName() + " non può essere debole a questo elemento e mangeggiare contemporaneamente l'arma con il medesimo elemento");
+                return false;
+            }
+            return true;
+        }
+        return true;
+    }
 }
