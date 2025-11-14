@@ -78,12 +78,15 @@ public static class GameFormulas
         {
             baseDamage = (statsAttacker.atk - statsDefender.res) * multiplyDamage;
         }
-        else { baseDamage = 0; }
+        else
+        {
+            baseDamage = 0;
+            return 0;
+        }
 
         bool crit = IsCrit((int)baseDamage);
         if (crit == true)
         { baseDamage *= 2; }
-
 
         if (baseDamage > 0)
         { return (int)baseDamage; }
